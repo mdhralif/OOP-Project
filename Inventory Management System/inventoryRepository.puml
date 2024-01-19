@@ -1,0 +1,8 @@
+@startuml
+interface InventoryRepository {
+~ void addProduct(Product)
+~ void addOrder(Order)
+~ List<Product> getProducts()
+~ List<Order> getOrders()
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+interface Displayable {
+~ void displayDetails()
+~ void displayStatus()
+}
+@enduml

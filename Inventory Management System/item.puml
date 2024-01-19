@@ -1,0 +1,13 @@
+@startuml
+abstract class Item {
+- String name
+- String id
++ String getName()
++ String getDescription()
++ void displayDetails()
++ {abstract}void displayStatus()
+}
+
+
+Displayable <|.. Item
+@enduml

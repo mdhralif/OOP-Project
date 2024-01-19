@@ -1,0 +1,90 @@
+@startuml
+enum ProductCategory {
++  ELECTRONICS
++  CLOTHING
++  FOOD
++  BOOKS
++  TOYS
++  OTHER
+}
+interface Displayable {
+~ void displayDetails()
+~ void displayStatus()
+}
+class InventoryManager {
+- List<Product> products
+- List<Order> orders
+~ OrderProcessor orderProcessor
++ List<Product> getProducts()
++ List<Order> getOrders()
++ void listProducts()
++ void listOrders()
++ void addProduct(Product)
++ void placeOrder(Order)
++ Product findProductByName(String)
+}
+interface InventoryRepository {
+~ void addProduct(Product)
+~ void addOrder(Order)
+~ List<Product> getProducts()
+~ List<Order> getOrders()
+}
+abstract class Item {
+- String name
+- String id
++ String getName()
++ String getDescription()
++ void displayDetails()
++ {abstract}void displayStatus()
+}
+
+
+Displayable <|.. Item
+class Order {
+- Product product
+- int quantity
+- LocalDate orderDate
+- boolean isReceived
++ Product getProduct()
++ int getQuantity()
++ LocalDate getOrderDate()
++ boolean isReceived()
+}
+class OrderProcessor {
+- Order order
++ Product getProduct()
++ int getQuantity()
++ LocalDate getOrderDate()
++ boolean isReceived()
++ void displayOrderDetails()
++ void displayDetails()
++ void displayStatus()
+}
+
+
+Displayable <|.. OrderProcessor
+class Product {
+- ProductCategory category
+- int quantity
++ void displayStatus()
++ void updateQuantity(int)
++ int getQuantity()
++ void updateStatus()
++ void displayDetails()
+}
+
+
+Item <|-- Product
+class InMemoryInventoryRepository {
+- List<Product> products
+- List<Order> orders
++ void addProduct(Product)
++ void addOrder(Order)
++ List<Product> getProducts()
++ List<Order> getOrders()
+}
+
+
+InventoryRepository <|.. InMemoryInventoryRepository
+
+@enduml

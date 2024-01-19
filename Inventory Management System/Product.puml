@@ -1,0 +1,14 @@
+@startuml
+class Product {
+- ProductCategory category
+- int quantity
++ void displayStatus()
++ void updateQuantity(int)
++ int getQuantity()
++ void updateStatus()
++ void displayDetails()
+}
+
+
+Item <|-- Product
+@enduml

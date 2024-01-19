@@ -1,0 +1,15 @@
+@startuml
+class OrderProcessor {
+- Order order
++ Product getProduct()
++ int getQuantity()
++ LocalDate getOrderDate()
++ boolean isReceived()
++ void displayOrderDetails()
++ void displayDetails()
++ void displayStatus()
+}
+
+
+Displayable <|.. OrderProcessor
+@enduml

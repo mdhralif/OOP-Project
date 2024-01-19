@@ -1,0 +1,9 @@
+@startuml
+class Main {
++ {static} void main(String[])
+- {static} void printMenu()
+- {static} void placeOrder(InventoryManager,InventoryRepository,Scanner)
+- {static} void displayOrders(InventoryManager)
+- {static} void addProduct(InventoryManager,Scanner)
+}
+@enduml

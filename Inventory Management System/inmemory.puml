@@ -1,0 +1,13 @@
+@startuml
+class InMemoryInventoryRepository {
+- List<Product> products
+- List<Order> orders
++ void addProduct(Product)
++ void addOrder(Order)
++ List<Product> getProducts()
++ List<Order> getOrders()
+}
+
+
+InventoryRepository <|.. InMemoryInventoryRepository
+@enduml

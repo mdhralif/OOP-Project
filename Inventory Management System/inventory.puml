@@ -1,0 +1,14 @@
+@startuml
+class InventoryManager {
+- List<Product> products
+- List<Order> orders
+~ OrderProcessor orderProcessor
++ List<Product> getProducts()
++ List<Order> getOrders()
++ void listProducts()
++ void listOrders()
++ void addProduct(Product)
++ void placeOrder(Order)
++ Product findProductByName(String)
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class Order {
+- Product product
+- int quantity
+- LocalDate orderDate
+- boolean isReceived
++ Product getProduct()
++ int getQuantity()
++ LocalDate getOrderDate()
++ boolean isReceived()
+}
+@enduml
